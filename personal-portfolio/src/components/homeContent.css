@@ -1,0 +1,127 @@
+.wrapper {
+  height: 100vh;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  top: 0px;
+  left: 0;
+}
+.img-contain {
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  opacity: 0.2;
+}
+.content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.info-section {
+  padding: 20px;
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.inside-self {
+  height: 450px;
+  width: 450px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 20px solid #1e1920f1;
+  box-shadow: 1px 1px 5px yellow;
+}
+.inside-self:hover {
+  transform: scale(0.9);
+  box-shadow: 8px 8px 20px rgb(211, 78, 211);
+}
+self-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.typing-animation {
+  font-weight: bolder;
+  font-size: 2em;
+  width: 0ch;
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(17) 3ms infinite alternate;
+}
+@keyframes typing {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 22.5ch;
+  }
+}
+.typing-animation {
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgb(63, 153, 153);
+}
+.data {
+  font-size: 2rem;
+  font-weight: 500;
+}
+@media screen and (max-width: 1170px) {
+  .content {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .info-section {
+    max-width: 90%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inside-self {
+    height: 300px;
+    width: 300px;
+  }
+
+  .typing-animation {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .data {
+    width: 90%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .img-contain {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    opacity: 0.2;
+  }
+}
