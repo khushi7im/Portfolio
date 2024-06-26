@@ -7,7 +7,7 @@ const Navbar = () => {
   const [color, setColor] = useState(false);
 
   let changeColor = () => {
-    if (window.screenY >= 20) {
+    if (window.screenY >= 10) {
       setColor(true);
     } else {
       setColor(false);
