@@ -1,6 +1,6 @@
 import React from "react";
 import BgImg from "../assets/home.jpg";
-import ProfileImg from "../assets/profile.png";
+import ProfileImg from "../assets/aboutportion.jpeg";
 import "./aboutSelf.css";
 import Navbar from "./nav";
 
