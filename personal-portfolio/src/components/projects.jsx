@@ -1,84 +1,31 @@
-import "./homeContent.css";
-import "./projects.css";
 import React from "react";
-import { motion } from "framer-motion";
+import "./projects.css";
 import TopImg from "/home2.jpg";
-import mainImg from "/kiki.png";
 import social from "/social.png";
-import image from "/image.png";
 import todo from "/todo.png";
 import chess from "/chess.png";
-import screenshot from "/Screenshot from 2025-02-16 14-15-35.png";
-import { Link, NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-function HomeContent() {
+const Projects = () => {
   return (
-    <div className="wrapper">
+    <div className="projects">
       <div className="bg-img">
-        <img
+        <motion.img
           className="img-contain"
           src={TopImg}
           alt="top image"
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 0.2 }}
         />
 
-        <div className="content">
-          <motion.div
-            className="info-section"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            <h1 className="typing-animation">Hello, I'm Khushi Dhiman</h1>
-            <br />
-            <div className="data">
-              I am a full-stack developer passionate about building dynamic,
-              efficient, and user-friendly web applications.
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="self-img"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-          >
-            <img className="inside-self" src={mainImg} alt="khushi" />
-          </motion.div>
-        </div>
-      </div>
-      <div className="projectAlbum">
-        <div className="imageGallery">
-          <span>
-            <img src={screenshot} alt="" />
-          </span>
-          <span>
-            <img src={social} alt="" />
-          </span>
-          <span>
-            <img src={todo} alt="" />
-          </span>
-          <span>
-            <img src={screenshot} alt="" />
-          </span>
-          <span>
-            <img src={chess} alt="" />
-          </span>
-          <span>
-            <img src={image} alt="" />
-          </span>
-        </div>
-        <div className="imageBottom"></div>
-      </div>
-      <div className="projects">
         <motion.div
           className="projectblock"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="projectTitle">Latest Projects</h1>
+          <h1 className="projectTitle">My Work</h1>
           <p>Below are a few of the projects I have worked on in the past.</p>
 
           {[
@@ -120,7 +67,7 @@ function HomeContent() {
                     <h1>{project.title}</h1>
                   )}
                   <h2>{project.tech}</h2>
-                  <h3>{project.desc}</h3>{" "}
+                  <h3>{project.desc}</h3>
                 </Link>
               </span>
 
@@ -139,6 +86,6 @@ function HomeContent() {
       </div>
     </div>
   );
-}
+};
 
-export default HomeContent;
+export default Projects;

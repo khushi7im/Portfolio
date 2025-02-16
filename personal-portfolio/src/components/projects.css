@@ -1,0 +1,155 @@
+.projects {
+  height: 100vh;
+  /* z-index: 999; */
+  margin-bottom: 700px;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+}
+.img-contain {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  opacity: 0.2;
+}
+@keyframes borderAnimation {
+  0% {
+    border-image-source: linear-gradient(
+      to right,
+      #070707,
+      rgb(253, 2, 220),
+      rgb(1, 250, 250)
+    );
+  }
+  50% {
+    border-image-source: linear-gradient(
+      to right,
+      rgb(1, 245, 245),
+      #0e0d0d,
+      rgb(250, 0, 217)
+    );
+  }
+  100% {
+    border-image-source: linear-gradient(
+      to right,
+      rgb(248, 2, 215),
+      rgb(1, 245, 245),
+      #030303
+    );
+  }
+}
+.projectblock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 120px;
+  .projectTitle {
+    font-size: 3em;
+    color: #f3f2f5;
+    margin-bottom: 30px;
+    padding: 5px;
+    border: 5px solid;
+    border-image: linear-gradient(
+        to right,
+        #1a1a1a,
+        rgb(145, 51, 132),
+        rgb(63, 153, 153)
+      )
+      1;
+    border-image-slice: 1;
+    animation: borderAnimation 1s linear infinite;
+  }
+
+  p {
+    font-size: 1.5em;
+    opacity: 0.8;
+    margin-bottom: 30px;
+    font-weight: 400;
+    line-height: 2;
+  }
+}
+
+.block {
+  border: 1px solid;
+  border-image: linear-gradient(to bottom, rgb(3, 255, 255), #0c0b0b) 1;
+  background-color: #0a0a0af1;
+  margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 80%;
+  height: 100%;
+}
+.block:last-child {
+  margin-bottom: 0px;
+}
+
+.blockItem1 {
+  padding: 20px; /* Added more padding for better spacing */
+  display: flex;
+  flex-direction: column;
+  background-color: #2a2a2a; /* Dark background for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 600px; /* Limiting width for readability */
+}
+
+.blockItem1:hover {
+  background-color: #4e4d4d;
+}
+
+.blockItem1 h1 {
+  font-size: 2.5em; /* Larger font size */
+  font-weight: 900;
+  color: rgb(3, 255, 255);
+  margin: 0 0 10px 0; /* Margin to create space between h1 and h2 */
+  text-align: center; /* Center text */
+  text-transform: uppercase; /* Make title uppercase for impact */
+}
+
+.blockItem1 h2 {
+  font-size: 1.4em; /* Slightly smaller */
+  font-weight: 600;
+  color: rgb(250, 3, 217); /* Slightly purple hue */
+  opacity: 0.8;
+  text-align: center; /* Center text */
+}
+
+.blockItem1 h3 {
+  padding: 15px; /* More padding for better spacing */
+  opacity: 0.7; /* Less opacity for better readability */
+  font-size: 20px; /* Slightly smaller font size */
+  font-weight: 400; /* Lighter weight */
+  color: #faf8f8; /* Soft light gray text */
+  line-height: 1.5; /* Line height for better readability */
+  text-align: justify; /* Justified text for a neat look */
+}
+
+.blockItem2 {
+  padding: 20px;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blockItem2 img {
+  border-radius: 10px;
+  background-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 260px;
+}
+
+.blockItem2 a {
+  display: block; /* Make sure the link takes up full space */
+  width: 100%;
+  height: 100%;
+}

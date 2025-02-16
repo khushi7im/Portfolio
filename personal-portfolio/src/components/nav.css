@@ -6,24 +6,54 @@
   height: 90px;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 1;
 }
 .header.bg {
   background-color: #131014f1;
   transition: 0.2s;
 }
-.title {
-  background-color: rgba(23, 23, 24, 0.788);
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
 }
-.header h1 a {
-  padding: 2px;
-  font-weight: 900;
-  font-size: 1.3em;
+@keyframes colorChange {
+  0% {
+    fill: red;
+  }
+  25% {
+    fill: blue;
+  }
+  50% {
+    fill: green;
+  }
+  75% {
+    fill: orange;
+  }
+  100% {
+    fill: red;
+  }
 }
-.header h1 {
-  border: 1px solid rgb(31, 29, 29);
-  box-shadow: 2px 2px 5px rgb(145, 51, 132);
+
+.heading .changing-color {
+  animation: colorChange 4s infinite;
+  margin-right: 15px;
 }
+.heading div {
+  opacity: 1;
+  font-weight: 210;
+  font-size: 1.2rem;
+  div {
+    opacity: 0.8;
+  }
+  .title {
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+}
+
 .nav-menu {
   display: flex;
   justify-content: space-evenly;
@@ -94,6 +124,6 @@
     top: 0;
     height: 50px;
     width: 100%;
-    z-index: 10;
+    z-index: 1;
   }
 }

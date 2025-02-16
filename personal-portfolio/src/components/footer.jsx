@@ -1,43 +1,70 @@
 import "./footer.css";
-
 import React from "react";
+import { motion } from "framer-motion";
 
 function Footer() {
   return (
-    <div className="footer">
+    <motion.div
+      className="footer"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
       <div>
-        <ul className="footer-box">
-          <li>
-            <a href="tel:+919050080006">
-              <i class="fa-solid fa-phone"></i>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:khushivashisth.im@gmail.com">
-              {" "}
-              <i class="fa-solid fa-envelope"></i>{" "}
-            </a>
-          </li>
-
-          <li>
-            <a href="https://github.com/Khushi-Vashisth">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://t.me/Khushi_vashisth">
-              {" "}
-              <i class="fa-brands fa-telegram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://wa.me/+919050080006">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-          </li>
-        </ul>
+        <motion.ul
+          className="footer-box"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+        >
+          {[
+            {
+              href: "https://www.instagram.com/_kh.ushi",
+              icon: "fa-brands fa-instagram",
+            },
+            {
+              href: "mailto:khushivashisth.im@gmail.com",
+              icon: "fa-solid fa-envelope",
+            },
+            {
+              href: "https://github.com/Khushi-Vashisth",
+              icon: "fa-brands fa-github",
+            },
+            {
+              href: "https://t.me/Khushi_vashisth",
+              icon: "fa-brands fa-telegram",
+            },
+            {
+              href: "https://www.linkedin.com/in/khushi-dhiman-549b98269",
+              icon: "fa-brands fa-linkedin-in",
+            },
+          ].map((item, index) => (
+            <motion.li
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5 }}
+            >
+              <a href={item.href}>
+                <motion.i
+                  className={item.icon}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                ></motion.i>
+              </a>
+            </motion.li>
+          ))}
+        </motion.ul>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
