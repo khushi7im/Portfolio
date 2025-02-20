@@ -25,19 +25,19 @@ function Footer() {
         >
           {[
             {
-              href: "https://www.instagram.com/_kh.ushi",
+              href: "https://www.instagram.com/khushi7im",
               icon: "fa-brands fa-instagram",
             },
             {
-              href: "mailto:khushivashisth.im@gmail.com",
+              href: "mailto:khushidhiman7im@gmail.com",
               icon: "fa-solid fa-envelope",
             },
             {
-              href: "https://github.com/Khushi-Vashisth",
+              href: "https://github.com/Khushi7im",
               icon: "fa-brands fa-github",
             },
             {
-              href: "https://t.me/Khushi_vashisth",
+              href: "https://t.me/Khushi7im",
               icon: "fa-brands fa-telegram",
             },
             {

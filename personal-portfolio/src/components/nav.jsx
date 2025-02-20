@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./nav.css";
 
 const Navbar = () => {
+  const location = useLocation();
   const [isClick, setIsClick] = useState(false);
   const [color, setColor] = useState(false);
 
@@ -60,24 +61,36 @@ const Navbar = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        <motion.li whileHover={{ scale: 1.1 }}>
+        <motion.li
+          whileHover={{ scale: 1.1 }}
+          className={location.pathname === "/" ? "active-link" : ""}
+        >
           <Link to="/" onClick={handleClick}>
             <i className="fa-solid fa-house"></i> Home
           </Link>
         </motion.li>
-        <motion.li whileHover={{ scale: 1.1 }}>
+        <motion.li
+          whileHover={{ scale: 1.1 }}
+          className={location.pathname === "/project" ? "active-link" : ""}
+        >
           <Link to="/project" onClick={handleClick}>
             <i className="fa-solid fa-list-check"></i> Project
           </Link>
         </motion.li>
-        <motion.li whileHover={{ scale: 1.1 }}>
+        <motion.li
+          whileHover={{ scale: 1.1 }}
+          className={location.pathname === "/about" ? "active-link" : ""}
+        >
           <Link to="/about" onClick={handleClick}>
-            <i className="fa-solid fa-user"></i> About me
+            <i className="fa-solid fa-user"></i> About
           </Link>
         </motion.li>
-        <motion.li whileHover={{ scale: 1.1 }}>
+        <motion.li
+          whileHover={{ scale: 1.1 }}
+          className={location.pathname === "/contact" ? "active-link" : ""}
+        >
           <Link to="/contact" onClick={handleClick}>
-            <i className="fa-solid fa-address-book"></i> Contact
+            <i class="fa-solid fa-comment"></i> Contact
           </Link>
         </motion.li>
       </motion.ul>

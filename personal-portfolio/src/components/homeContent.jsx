@@ -10,6 +10,7 @@ import todo from "/todo.png";
 import chess from "/chess.png";
 import screenshot from "/Screenshot from 2025-02-16 14-15-35.png";
 import { Link, NavLink } from "react-router-dom";
+import blue from "/blue.jpeg";
 
 function HomeContent() {
   return (
@@ -79,7 +80,6 @@ function HomeContent() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="projectTitle">Latest Projects</h1>
-          <p>Below are a few of the projects I have worked on in the past.</p>
 
           {[
             {
@@ -136,6 +136,17 @@ function HomeContent() {
             </motion.div>
           ))}
         </motion.div>
+      </div>
+      <div
+        className="contactfooter"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <span className="contact_footer"></span>
+        <div className="foot">
+          <h2>Have any idea ?</h2>
+        </div>
       </div>
     </div>
   );

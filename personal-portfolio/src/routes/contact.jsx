@@ -1,23 +1,15 @@
 import React from "react";
+import Navbar from "../components/nav";
+import Footer from "../components/footer";
+import ContactForm from "../components/contact";
 
 const Contact = () => {
   return (
-    <>
-      <div>
-        <form action="" method="post">
-          <div className="form-group">
-            <label htmlFor="">
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Enter your name"
-              />
-            </label>
-          </div>
-        </form>
-      </div>
-    </>
+    <div>
+      <Navbar />
+      <ContactForm />
+      <Footer />
+    </div>
   );
 };
 

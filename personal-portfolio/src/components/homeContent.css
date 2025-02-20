@@ -8,6 +8,7 @@
   height: 100%;
 }
 .img-contain {
+  margin: 0px;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -95,7 +96,7 @@ self-img {
 
 .imageGallery {
   display: flex;
-  gap: 15px; /* Space between images */
+  gap: 0px; /* Space between images */
   animation: scrollX 10s linear infinite; /* Infinite scrolling animation */
   will-change: transform; /* Optimize performance */
 }
@@ -136,7 +137,21 @@ self-img {
   bottom: 0;
   border: 1px solid #1a1a1a;
 }
-
+.contact_footer {
+  padding: 0px;
+  margin: 0px;
+  width: 600px;
+  height: 400px;
+  opacity: 0.3;
+  background-color: black;
+  object-fit: cover;
+  background-position: center;
+}
+.foot {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+}
 @media screen and (max-width: 1100px) {
   .content {
     position: absolute;
