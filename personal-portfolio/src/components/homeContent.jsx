@@ -30,7 +30,7 @@ function HomeContent() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <h1 className="typing-animation">Hello, I'm Vishal Dhiman</h1>
+            <h1 className="typing-animation">Hello, I'm Khushi Dhiman</h1>
             <br />
             <div className="data">
               I am a full-stack developer passionate about building dynamic,

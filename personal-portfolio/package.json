@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://khushi7im.github.io/Portfolio",
+  "homepage": "khushidhiman.in",
   "scripts": {
     "dev": "vite",
     "deploy": "vite build && gh-pages -d dist",
