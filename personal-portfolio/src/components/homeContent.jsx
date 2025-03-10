@@ -3,7 +3,9 @@ import "./projects.css";
 import React from "react";
 import { motion } from "framer-motion";
 import TopImg from "/home2.jpg";
-import mainImg from "/kiki.png";
+// import mainImg from "/kiki.png";
+import mainImg from "/kiki2.png";
+
 import social from "/social.png";
 import image from "/image.png";
 import todo from "/todo.png";
@@ -25,6 +27,14 @@ function HomeContent() {
 
         <div className="content">
           <motion.div
+            className="self-img"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          >
+            <img className="inside-self" src={mainImg} alt="khushi" />
+          </motion.div>
+          <motion.div
             className="info-section"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -36,15 +46,6 @@ function HomeContent() {
               I am a full-stack developer passionate about building dynamic,
               efficient, and user-friendly web applications.
             </div>
-          </motion.div>
-
-          <motion.div
-            className="self-img"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-          >
-            <img className="inside-self" src={mainImg} alt="khushi" />
           </motion.div>
         </div>
       </div>

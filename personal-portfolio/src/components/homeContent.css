@@ -103,6 +103,7 @@
   height: 100vh;
   display: flex;
   justify-content: space-around;
+
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
@@ -239,7 +240,7 @@ self-img {
     position: absolute;
     width: 100%;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
