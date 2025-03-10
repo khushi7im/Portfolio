@@ -6,6 +6,7 @@ import todo from "/todo.png";
 import chess from "/chess.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import screenshot from "/Screenshot from 2025-02-16 14-15-35.png";
 
 const Projects = () => {
   return (
@@ -26,13 +27,15 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="projectTitle">My Work</h1>
-          <p>Below are a few of the projects I have worked on in the past.</p>
+          <p className="title_para">
+            Below are a few of the projects I have worked on in the past.
+          </p>
 
           {[
             {
               title: "CHILLDOSE",
-              tech: "REACT • NODE.JS • MONGODB",
-              desc: "Offering users the ability to create profiles, share updates, interact in real-time, and much more...",
+              tech: " MongoDB • Express • React • Node.js",
+              desc: "Built using the MERN stack, allows users to create profiles, interact in real-time & explore various features...",
               link: "https://social-media-app-kd.netlify.app",
               img: social,
             },
@@ -45,10 +48,17 @@ const Projects = () => {
             },
             {
               title: "CHESS",
-              tech: "SOCKET.IO • NODE.JS • EXPRESS.JS",
+              tech: "SOCKET.IO  • EXPRESS.JS",
               desc: "The ultimate online chess experience. Challenge friends, and engage in intense matches...",
               link: "https://chess-gb4x.onrender.com",
               img: chess,
+            },
+            {
+              title: "Student Info Hub",
+              tech: "React • Node.js • Express.js • MySQL",
+              desc: "A web application that allows users to add student details, store them DB, and view all student data in a tabular format.",
+              link: "https://github.com/khushi7im/studentData",
+              img: screenshot,
             },
           ].map((project, index) => (
             <motion.div

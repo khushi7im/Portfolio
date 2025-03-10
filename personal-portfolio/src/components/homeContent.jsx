@@ -10,7 +10,6 @@ import todo from "/todo.png";
 import chess from "/chess.png";
 import screenshot from "/Screenshot from 2025-02-16 14-15-35.png";
 import { Link, NavLink } from "react-router-dom";
-import blue from "/blue.jpeg";
 
 function HomeContent() {
   return (
@@ -84,8 +83,8 @@ function HomeContent() {
           {[
             {
               title: "CHILLDOSE",
-              tech: "REACT • NODE.JS • MONGODB",
-              desc: "Offering users the ability to create profiles, share updates, interact in real-time, and much more...",
+              tech: " MongoDB • Express • React • Node.js",
+              desc: "Built using the MERN stack, allows users to create profiles, interact in real-time & explore various features...",
               link: "https://social-media-app-kd.netlify.app",
               img: social,
             },
@@ -98,10 +97,17 @@ function HomeContent() {
             },
             {
               title: "CHESS",
-              tech: "SOCKET.IO • NODE.JS • EXPRESS.JS",
+              tech: "SOCKET.IO  • EXPRESS.JS",
               desc: "The ultimate online chess experience. Challenge friends, and engage in intense matches...",
               link: "https://chess-gb4x.onrender.com",
               img: chess,
+            },
+            {
+              title: "Student Info Hub",
+              tech: "React • Node.js • Express.js • MySQL",
+              desc: "A web application that allows users to add student details, store them DB, and view all student data in a tabular format.",
+              link: "https://github.com/khushi7im/studentData",
+              img: screenshot,
             },
           ].map((project, index) => (
             <motion.div
@@ -138,14 +144,19 @@ function HomeContent() {
         </motion.div>
       </div>
       <div
-        className="contactfooter"
+        className="contactFooter"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <span className="contact_footer"></span>
         <div className="foot">
-          <h2>Have any idea ?</h2>
+          <h3>Have any idea ?</h3>
+          <h1>Let's talk about it..</h1>
+          <button className="contactbtn">
+            <Link to="/contact">
+              Contact <i class="fa-solid fa-square-arrow-up-right"></i>
+            </Link>
+          </button>
         </div>
       </div>
     </div>

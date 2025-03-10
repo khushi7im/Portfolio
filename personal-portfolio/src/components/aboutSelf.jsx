@@ -5,37 +5,28 @@ import gbn from "/gbn.jpeg";
 import kuk from "/kuk.jpeg";
 import aarohi from "/aarohi.jpeg";
 import amar from "/amar2.jpeg";
-import path from "/path.jpeg";
+import logo from "/logo2.png";
 
 function AboutMyself() {
-  const containerVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, staggerChildren: 0.3 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-  };
-
   return (
     <motion.div
       className="about"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
     >
-      <motion.div className="study-cycle">
-        <h1 className="abouttitle">Learning Path</h1>
+      <div className="study-cycle">
+        <h1 className="abouttitle">From Passion to a Developer</h1>
 
         {[
           {
+            className: "intro",
+            text: "Name's Khushi Dhiman, a passionate Full-Stack Web Developer from Panipat. I love building things and believe that the best things are often invisible.",
+            url: logo,
+          },
+          {
             className: "kuk",
-            text: "Currently pursuing Bachelor of Technology in Computer Science and Engineering from Kurukshetra university.",
+            text: "Currently pursuing Bachelor of Technology in Computer Science and Engineering from Kurukshetra University.",
             url: kuk,
           },
           {
@@ -50,23 +41,23 @@ function AboutMyself() {
           },
           {
             className: "amar",
-            text: "Started my early education journey at Amar Jyoti Sr. Sec. School , Sanoli Khurd, Panipat.",
+            text: "Started my early education journey at Amar Jyoti Sr. Sec. School, Sanoli Khurd, Panipat.",
             url: amar,
           },
         ].map((item, index) => (
           <motion.div
             key={index}
             className={item.className}
-            variants={itemVariants}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
           >
             <p>{item.text}</p>
-            <motion.img src={item.url} alt="" />
+            <motion.img src={item.url} alt="" transition={{ duration: 0.3 }} />
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </motion.div>
   );
 }

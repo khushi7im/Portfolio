@@ -64,7 +64,22 @@ function ContactForm() {
         />
         <button type="submit">Send Message</button>
       </form>
-      {status && <p className="status-message">{status}</p>}
+      <div
+        className="contactfooter"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="foot">
+          <h3>Have any idea ?</h3>
+          <h1>Let's talk about it..</h1>
+          <button className="contactbtn">
+            <Link to="/contact">
+              Contact <i class="fa-solid fa-square-arrow-up-right"></i>
+            </Link>
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

@@ -28,19 +28,19 @@
 }
 @keyframes colorChange {
   0% {
-    fill: red;
+    fill: rgb(234, 0, 255);
   }
   25% {
-    fill: blue;
+    fill: rgb(0, 217, 255);
   }
   50% {
-    fill: green;
+    fill: rgb(2, 247, 2);
   }
   75% {
-    fill: orange;
+    fill: rgb(255, 238, 0);
   }
   100% {
-    fill: red;
+    fill: rgb(255, 0, 234);
   }
 }
 
@@ -68,14 +68,14 @@
   list-style: none;
 }
 .nav-menu li {
-  padding: 10px 20px;
+  padding: 6px 10px;
 }
 .nav-menu li a {
   font-weight: 500;
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 .nav-menu li i {
-  font-size: 0.9em;
+  font-size: 0.7em;
 }
 .header .menu {
   font-weight: 1700;
@@ -83,7 +83,7 @@
   display: none;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1000px) {
   .nav-menu {
     display: none;
   }
@@ -102,13 +102,14 @@
     margin: 0px;
     padding: 0px;
     z-index: 1;
+    font-size: 15px;
   }
 
   .header h1 {
     position: absolute;
     top: 5px;
     left: 10px;
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-weight: 500;
   }
   .nav-menu li a {
@@ -117,13 +118,15 @@
   .header .menu {
     position: absolute;
     top: 7px;
-    right: 10px;
+    right: 20px;
     display: initial;
     z-index: 1;
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   .header {
+    margin: 0px;
+    padding: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -131,6 +134,34 @@
     top: 0;
     height: 50px;
     width: 100%;
-    z-index: 1;
+    z-index: 999;
+    font-size: 1.4em;
+    /* color: blueviolet; */
+  }
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5px;
+  }
+  .heading div {
+    /* opacity: 1;
+    font-weight: 210;
+    font-size: 1.2rem; */
+    div {
+      opacity: 0.8;
+      display: none;
+    }
+    .title {
+      font-weight: 500;
+      font-size: 1.3em;
+      /* color: rgb(170, 84, 250); */
+    }
+  }
+  .heading .changing-color {
+    animation: colorChange 4s infinite;
+    margin-right: 10px;
+    width: 27px;
+    height: 27px;
   }
 }
