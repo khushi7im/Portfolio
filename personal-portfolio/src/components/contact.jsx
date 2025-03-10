@@ -1,87 +1,89 @@
 import React, { useState } from "react";
 import "./contact.css";
+import TopImg from "/home2.jpg";
+import { motion } from "framer-motion";
 
-function ContactForm() {
+const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-
-    try {
-      const response = await fetch("https://your-backend-endpoint.com/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("Failed to send message.");
-      }
-    } catch (error) {
-      setStatus("An error occurred. Try again later.");
-    }
+    console.log("Form Submitted", formData);
   };
 
   return (
     <div className="contact-container">
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit} className="contact-form">
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Send Message</button>
-      </form>
-      <div
-        className="contactfooter"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="foot">
-          <h3>Have any idea ?</h3>
-          <h1>Let's talk about it..</h1>
-          <button className="contactbtn">
-            <Link to="/contact">
-              Contact <i class="fa-solid fa-square-arrow-up-right"></i>
-            </Link>
+      <div className="contact-wrapper">
+        <h1 className="contact-heading">Contact</h1>
+        <p className="contact-description">
+          Please fill out the following form and we will get back to you within
+          the next 24 hours to help you become even greater at what you do.
+        </p>
+        <form onSubmit={handleSubmit} className="contact-form">
+          {/* Name Field */}
+          <div className="form-group">
+            <label htmlFor="name">
+              What's your name? <span>*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Email Field */}
+          <div className="form-group">
+            <label htmlFor="email">
+              What is your email address? <span>*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Message Field */}
+          <div className="form-group">
+            <label htmlFor="message">
+              Write your message here <span>*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Enter your message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+        </form>{" "}
+        <div className="submission">
+          {" "}
+          <button type="submit" className="submit-button">
+            Send Message
           </button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default ContactForm;

@@ -5,7 +5,8 @@ import gbn from "/gbn.jpeg";
 import kuk from "/kuk.jpeg";
 import aarohi from "/aarohi.jpeg";
 import amar from "/amar2.jpeg";
-import logo from "/logo2.png";
+// import logo from "/logo2.png";
+import logo from "/aboutlogo.jpeg";
 
 function AboutMyself() {
   return (
