@@ -1,5 +1,26 @@
 /* General Styles */
 
+.popup-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(63, 153, 153); /* Green for success */
+  color: black;
+  padding: 30px 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+  display: none;
+  z-index: 1000;
+}
+
+.popup-message.show {
+  display: block;
+}
+
 .contact-container {
   margin: 0px;
   padding: 0px;
