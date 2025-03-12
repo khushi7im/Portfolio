@@ -1,22 +1,6 @@
 import React, { useState } from "react";
 import "./contact.css";
-import { getDatabase, ref, push } from "firebase/database";
-import { initializeApp } from "firebase/app";
-
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_KEY,
-  authDomain: import.meta.env.VITE_DOMAIN,
-  databaseURL: import.meta.env.VITE_URL,
-  projectId: import.meta.env.VITE_ID,
-  storageBucket: import.meta.env.VITE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_SENDERID,
-  appId: import.meta.env.VITE_APPID,
-  measurementId: import.meta.env.VITE_ANOTHERID,
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+import { db, collection, addDoc } from "../../firebase.js";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -35,12 +19,17 @@ const ContactForm = () => {
     setIsSubmitted(true);
     setShowPopup(true);
 
-    // Hide the popup after 3 seconds
-    setTimeout(() => {
-      setShowPopup(false);
-      setIsSubmitted(false);
-      setFormData({ name: "", email: "", message: "" }); // Reset form after popup disappears
-    }, 2000);
+    try {
+      const docRef = await addDoc(collection(db, "contact_form"), formData);
+      setTimeout(() => {
+        setShowPopup(false);
+        setIsSubmitted(false);
+        setFormData({ name: "", email: "", message: "" }); // Reset form after popup disappears
+      }, 2000);
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      alert("Failed to send message!");
+    }
   };
 
   return (
